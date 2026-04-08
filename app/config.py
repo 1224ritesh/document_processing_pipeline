@@ -10,14 +10,14 @@ class Settings(BaseSettings):
     # Gemini
     gemini_api_key: str = Field(..., min_length=1)
     segregator_model: str = "gemini-2.5-flash-lite"
-    extractor_model: str = "gemini-2.5-flash"
+    extractor_model: str = "gemini-2.5-flash-lite"
 
     # PDF processing
     max_pdf_size_mb: int = 50
     max_pdf_pages: int = 1000
 
     # Rate limiting
-    rate_limit: str = "3/minute"
+    rate_limit: str = "10/minute"
 
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 

@@ -20,7 +20,6 @@ def split_pdf_by_pages(pdf_bytes: bytes, page_numbers: list[int]) -> bytes:
 
 
 def get_page_count(pdf_bytes: bytes) -> int:
-    """Return the number of pages in a PDF."""
     doc = fitz.open(stream=pdf_bytes, filetype="pdf")
     count = len(doc)
     doc.close()
@@ -28,7 +27,6 @@ def get_page_count(pdf_bytes: bytes) -> int:
 
 
 def validate_pdf(pdf_bytes: bytes, max_size_mb: int, max_pages: int) -> None:
-    """Validate PDF size and page count. Raises ValueError if invalid."""
     size_mb = len(pdf_bytes) / (1024 * 1024)
     if size_mb > max_size_mb:
         raise ValueError(f"PDF size {size_mb:.1f}MB exceeds limit of {max_size_mb}MB")
