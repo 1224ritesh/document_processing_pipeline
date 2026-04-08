@@ -1,5 +1,7 @@
 # Document Processing Pipeline
 
+**Live API**: https://documentprocessingpipeline-production.up.railway.app
+
 A FastAPI + LangGraph service that processes medical insurance claim PDFs using Gemini's native document understanding. Accepts a PDF and a claim ID, runs a multi-agent extraction pipeline, and returns structured JSON.
 
 ## Architecture
